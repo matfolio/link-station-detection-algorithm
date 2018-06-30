@@ -1,0 +1,31 @@
+
+.wrapper {
+	background: #ebecf2;
+}
+.mylist{
+	position: absolute;
+  	top: 10%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+li{
+	list-style:none;
+
+}
+li:hover{
+	background-color:#589ea5;
+	cursor:pointer;
+}
+.main{
+	color: #589ea5;
+	border:1px solid #589ea5;
+	background: #ebecf2;
+	border-radius:3px;
+	padding:20px 10px;
+	font-size: 25px;
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	background-repeat: no-repeat;
+}
