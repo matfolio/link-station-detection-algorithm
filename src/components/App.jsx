@@ -43,8 +43,8 @@ export default class App extends React.Component{
 	printLinkStation = (device_point) => {
 		
 		if(this.state.suitableLinkStation_power.length !== 0 ){
-			 let result = `Best Link station for point ${device_point.x}, ${device_point.y} is 
-			 ${this.state.suitableLinkStation_power[0].x}, ${this.state.suitableLinkStation_power[0].y} 
+			 let result = `Best Link station for point ${device_point.x} , ${device_point.y} is 
+			 ${this.state.suitableLinkStation_power[0].x} , ${this.state.suitableLinkStation_power[0].y} 
 			 with power ${this.state.suitableLinkStation_power[0].power}`;
 
 			 /*** 
@@ -56,7 +56,7 @@ export default class App extends React.Component{
 			 
 		}
 		if(this.state.suitableLinkStation_power.length === 0 ) {
-			let result = `No Link station within the reach for point: ${device_point.x}, ${device_point.y}`;
+			let result = `No Link station within the reach for point: ${device_point.x} , ${device_point.y}`;
 			this.setState({result});
 		}
 	}
@@ -113,22 +113,22 @@ export default class App extends React.Component{
 	render(){
 		return (
 
-				<div className="wrapper">
-					
-					<div className="btn-group mylist">
-					  <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Select the device point ( x , y )
-					  </button>
-					  <ul className="dropdown-menu">
-					    <li className="dropdown-item item1 text-white bg-success" id="x0,y0" onClick={this.handleClick} >Device point at ( 0 , 0 )</li>
-					    <li className="dropdown-item item2 text-white bg-success" id="x100,y100" onClick={this.handleClick}>Device point at ( 100 , 100 ) </li>
-					    <li className="dropdown-item item3 text-white bg-success" id="x15,y10" onClick={this.handleClick} >Device point at ( 15 , 10 )</li>
-					    <li className="dropdown-item item4 text-white bg-success" id="x18,y18" onClick={this.handleClick} >Device point at ( 18 , 18 )</li>
-					  </ul>
-					</div>
-					<Result result = {this.state.result} />
-				</div>
+		<div className="wrapper">
 
-			)
+			<div className="btn-group mylist">
+			  <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Select the device point ( x , y )
+			  </button>
+			  <ul className="dropdown-menu">
+			    <li className="dropdown-item item1 text-white bg-success" id="x0,y0" onClick={this.handleClick} >Device point at ( 0 , 0 )</li>
+			    <li className="dropdown-item item2 text-white bg-success" id="x100,y100" onClick={this.handleClick}>Device point at ( 100 , 100 ) </li>
+			    <li className="dropdown-item item3 text-white bg-success" id="x15,y10" onClick={this.handleClick} >Device point at ( 15 , 10 )</li>
+			    <li className="dropdown-item item4 text-white bg-success" id="x18,y18" onClick={this.handleClick} >Device point at ( 18 , 18 )</li>
+			  </ul>
+			</div>
+			<Result result = {this.state.result} />
+		</div>
+
+	     )
 	}
 }
