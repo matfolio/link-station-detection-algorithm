@@ -19,34 +19,34 @@ module.exports = {
   },
   module:{
   	rules:[
-  		{
-  			test:/\.css$/,
-  			use:[ MiniCssExtractPlugin.loader, 'css-loader' ]
-  			
-  		},
-  		{
-	        test: /\.(png|jpg|gif)$/,
-	        use: [
-	          {
-	            loader: 'file-loader',
-	            options: {}  
-	          }
-	        ]
-	    },
-  		{
-	        test: /\.jsx?$/,
-	        exclude: /node_modules/,
-	        use: {
-		        	loader: "babel-loader",
-		        	options:{
-		        		presets: ['env','react'],
-		        		plugins: ["transform-object-rest-spread","transform-class-properties","transform-es2015-arrow-functions"],
-		        		sourceMap: true
-		        	}
-	        }
-        	
-        }
-  	]
+	{
+		test:/\.css$/,
+		use:[ MiniCssExtractPlugin.loader, 'css-loader' ]
+
+	},
+	{
+		test: /\.(png|jpg|gif)$/,
+		use: [
+		  {
+		    loader: 'file-loader',
+		    options: {}  
+		  }
+		]
+	},
+	{
+		test: /\.jsx?$/,
+		exclude: /node_modules/,
+		use: {
+		loader: "babel-loader",
+		options:{
+			presets: ['env','react'],
+			plugins: ["transform-object-rest-spread","transform-class-properties","transform-es2015-arrow-functions"],
+			sourceMap: true
+		   }
+		}
+
+	}
+     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
