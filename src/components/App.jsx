@@ -43,8 +43,8 @@ export default class App extends React.Component{
 	printLinkStation = (device_point) => {
 		
 		if(this.state.suitableLinkStation_power.length !== 0 ){
-			 let result = `Best Link station for point ${device_point.x} , ${device_point.y} is 
-			 ${this.state.suitableLinkStation_power[0].x} , ${this.state.suitableLinkStation_power[0].y} 
+			 let result = `Best Link station for point (${device_point.x} , ${device_point.y}) is 
+			 (${this.state.suitableLinkStation_power[0].x} , ${this.state.suitableLinkStation_power[0].y}) 
 			 with power ${this.state.suitableLinkStation_power[0].power}`;
 
 			 /*** 
@@ -56,7 +56,7 @@ export default class App extends React.Component{
 			 
 		}
 		if(this.state.suitableLinkStation_power.length === 0 ) {
-			let result = `No Link station within the reach for point: ${device_point.x} , ${device_point.y}`;
+			let result = `No Link station within the reach for point: (${device_point.x} , ${device_point.y})`;
 			this.setState({result});
 		}
 	}
@@ -84,7 +84,7 @@ export default class App extends React.Component{
 			//return power;
 		}
 		if(distanceValue <= link.r) {
-			power = link.r - distanceValue;
+			power = Math.pow((link.r - distanceValue),2);
 
 			// It is possible to have multiple suitable link station with respect to power
 			// One way to determine right link station the device could connect with is to
